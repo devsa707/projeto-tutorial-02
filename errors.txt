@@ -2,7 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scripts/initialization/people.entity.rpy", line 27: indentation mismatch.
+File "game/scripts/script.rpy", line 6: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
+    "Parada de Onibus"
+                      ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Mon Jun 27 00:04:04 2022
+Mon Jun 27 22:59:08 2022

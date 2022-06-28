@@ -1,34 +1,92 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/scripts/initialization/place.entity.rpy", line 1, in script
-    init python:
-  File "game/scripts/initialization/place.entity.rpy", line 1, in script
-    init python:
-  File "game/scripts/initialization/place.entity.rpy", line 22, in <module>
-    Locations.append(Place("Banco","banco",False))
-NameError: name 'Place' is not defined
+  File "game/scripts/script.rpy", line 4, in script
+    menu:
+  File "game/scripts/screens/screens.rpy", line 206, in execute
+    screen choice(items):
+  File "game/scripts/screens/screens.rpy", line 206, in execute
+    screen choice(items):
+  File "game/scripts/screens/screens.rpy", line 207, in execute
+    use Main_UI
+  File "game/scripts/screens/mainUI.rpy", line 1, in execute
+    screen Main_UI():
+  File "game/scripts/screens/mainUI.rpy", line 1, in execute
+    screen Main_UI():
+  File "game/scripts/screens/mainUI.rpy", line 2, in execute
+    use BG_Image
+  File "game/scripts/screens/bg_image.rpy", line 1, in execute
+    screen BG_Image():
+  File "game/scripts/screens/bg_image.rpy", line 1, in execute
+    screen BG_Image():
+  File "game/scripts/screens/bg_image.rpy", line 3, in execute
+    for q in Locations:
+  File "game/scripts/screens/bg_image.rpy", line 4, in execute
+    if q.name == Location:
+  File "game/scripts/screens/bg_image.rpy", line 5, in execute
+    $ Background = q.BG_Image
+  File "game/scripts/screens/bg_image.rpy", line 5, in <module>
+    $ Background = q.BG_Image
+AttributeError: 'place' object has no attribute 'BG_Image'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/bootstrap.py", line 331, in bootstrap
-    renpy.main.main()
-  File "renpy/main.py", line 560, in main
-    renpy.game.context().run(node)
-  File "game/scripts/initialization/place.entity.rpy", line 1, in script
-    init python:
-  File "game/scripts/initialization/place.entity.rpy", line 1, in script
-    init python:
-  File "renpy/ast.py", line 928, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "renpy/python.py", line 2245, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/scripts/initialization/place.entity.rpy", line 22, in <module>
-    Locations.append(Place("Banco","banco",False))
-NameError: name 'Place' is not defined
+  File "game/scripts/script.rpy", line 4, in script
+    menu:
+  File "renpy/ast.py", line 1688, in execute
+    choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
+  File "renpy/exports.py", line 1060, in menu
+    rv = renpy.store.menu(new_items)
+  File "renpy/exports.py", line 1296, in display_menu
+    rv = renpy.ui.interact(mouse='menu', type=type, roll_forward=roll_forward)
+  File "renpy/ui.py", line 298, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "renpy/display/core.py", line 3325, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
+  File "renpy/display/core.py", line 3737, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "renpy/display/core.py", line 568, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 568, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 568, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/screen.py", line 436, in visit_all
+    callback(self)
+  File "renpy/display/core.py", line 3737, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "renpy/display/screen.py", line 447, in per_interact
+    self.update()
+  File "renpy/display/screen.py", line 637, in update
+    self.screen.function(**self.scope)
+  File "game/scripts/screens/screens.rpy", line 206, in execute
+    screen choice(items):
+  File "game/scripts/screens/screens.rpy", line 206, in execute
+    screen choice(items):
+  File "game/scripts/screens/screens.rpy", line 207, in execute
+    use Main_UI
+  File "game/scripts/screens/mainUI.rpy", line 1, in execute
+    screen Main_UI():
+  File "game/scripts/screens/mainUI.rpy", line 1, in execute
+    screen Main_UI():
+  File "game/scripts/screens/mainUI.rpy", line 2, in execute
+    use BG_Image
+  File "game/scripts/screens/bg_image.rpy", line 1, in execute
+    screen BG_Image():
+  File "game/scripts/screens/bg_image.rpy", line 1, in execute
+    screen BG_Image():
+  File "game/scripts/screens/bg_image.rpy", line 3, in execute
+    for q in Locations:
+  File "game/scripts/screens/bg_image.rpy", line 4, in execute
+    if q.name == Location:
+  File "game/scripts/screens/bg_image.rpy", line 5, in execute
+    $ Background = q.BG_Image
+  File "game/scripts/screens/bg_image.rpy", line 5, in <module>
+    $ Background = q.BG_Image
+AttributeError: 'place' object has no attribute 'BG_Image'
 
 Windows-10-10.0.19041
 Ren'Py 7.4.11.2266
 projeto teste 2 1.0
-Mon Jun 27 00:05:21 2022
+Mon Jun 27 23:09:03 2022

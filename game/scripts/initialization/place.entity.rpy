@@ -1,15 +1,18 @@
 init python:
 
     class place(object):
-        def __init__(self,name,cfname,isActive):
+        def __init__(self,name,cfName,isActive):
             self.name = name
-            self.cfname = cfname
+            self.cfName = cfName
             self.isActive = isActive
 
         @property
         def bg_image(self):
-            FilePath = "images/places/backgrounds/" + self.cfname + ".jpg"
-            return FilePath
+            FilePath = "images/places/backgrounds/" + self.cfName + ".jpg"
+            if renpy.loadable(FilePath):
+                return FilePath
+            else:
+                return "images/places/backgrounds/default.jpg"
     
         def unLock(self):
             self.isActive = True
@@ -17,9 +20,22 @@ init python:
         def lock(self):
             self.isActive = False
             
+        @property
+        def mapIcon(self):
+            global Chapter
+            global Sequence
+            defOutput = "images/places/icons/none.png"
+            output = "images/places/icons" + self.cfName + ".png"
+            altOutput = "images/places/icons" + self.cfName + "_" + str(Chapter) + "_" + str(Sequence) + ".png"
+            if renpy.loadable(altOutput):
+                return altOutput
+            if renpy.loadable(output):
+                return output
+            return defOutput
+
     Locations = []
 
-    Locations.append(place("Banco","banco",False))
+    Locations.append(place("Parada de Onibus","onibus",False))
     Locations.append(place("Posto de Gasolina","posto_gasolina",False))
     Locations.append(place("Hotel Paraíso","hotel",False))
     Locations.append(place("Minha Casa","casa",False))
@@ -30,7 +46,7 @@ init python:
         global Locations
         for q in Locations:
             if Location == q.name:
-                return q.cfname
+                return q.cfName
         return ""
 
     def CodeFriendlyLocationNumber():

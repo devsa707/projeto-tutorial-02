@@ -173,7 +173,6 @@ style say_dialogue:
 
 screen input(prompt):
     style_prefix "input"
-
     window:
 
         vbox:
@@ -205,8 +204,8 @@ style input:
 ## https://www.renpy.org/doc/html/screen_special.html#choice
 
 screen choice(items):
+    use Main_UI
     style_prefix "choice"
-
     vbox:
         for i in items:
             textbutton i.caption action i.action
