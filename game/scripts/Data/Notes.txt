@@ -1,0 +1,36 @@
+multiple characters
+characters to be interactable at all times, story relevant dialogue
+
+character class needs
+name,
+location,
+isactive.
+
+
+multiple locations
+travel beteween locations
+lockable
+minimap or nav screen
+
+location class needs:
+name,
+code friendly name(this is sothat we can reference filenames)
+unlocked
+
+clickable items
+default click action, story relevant action  
+when items clicked, checi if alterantive action is available, if not carry out default action
+
+
+cliockable items need:
+name,
+isactive,
+code friendly name
+
+chapter based storyline: each chapter will have different stages
+one item or character dialogue will move the sroty forward one stage
+
+for example we can create a label called
+Dave + chapter number and stage  thus the first label for dave would be dave_1_0
+string labelToCall = "character click on" + str(chapter) + "_" + str(stage)
+call expression labelToCall
