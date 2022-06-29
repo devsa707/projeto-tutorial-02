@@ -1,92 +1,78 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/scripts/script.rpy", line 4, in script
-    menu:
-  File "game/scripts/screens/screens.rpy", line 206, in execute
-    screen choice(items):
-  File "game/scripts/screens/screens.rpy", line 206, in execute
-    screen choice(items):
-  File "game/scripts/screens/screens.rpy", line 207, in execute
-    use Main_UI
-  File "game/scripts/screens/mainUI.rpy", line 1, in execute
-    screen Main_UI():
-  File "game/scripts/screens/mainUI.rpy", line 1, in execute
-    screen Main_UI():
-  File "game/scripts/screens/mainUI.rpy", line 2, in execute
-    use BG_Image
-  File "game/scripts/screens/bg_image.rpy", line 1, in execute
-    screen BG_Image():
-  File "game/scripts/screens/bg_image.rpy", line 1, in execute
-    screen BG_Image():
-  File "game/scripts/screens/bg_image.rpy", line 3, in execute
-    for q in Locations:
-  File "game/scripts/screens/bg_image.rpy", line 4, in execute
-    if q.name == Location:
-  File "game/scripts/screens/bg_image.rpy", line 5, in execute
-    $ Background = q.BG_Image
-  File "game/scripts/screens/bg_image.rpy", line 5, in <module>
-    $ Background = q.BG_Image
-AttributeError: 'place' object has no attribute 'BG_Image'
+While loading <'Image' u'images/places/icons/none.png'>:
+  File "game/scripts/script.rpy", line 6, in script
+    $ UIreturn = renpy.call_screen("Main_UI")
+  File "game/scripts/script.rpy", line 6, in <module>
+    $ UIreturn = renpy.call_screen("Main_UI")
+IOError: Couldn't find file 'images/places/icons/none.png'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/scripts/script.rpy", line 4, in script
-    menu:
-  File "renpy/ast.py", line 1688, in execute
-    choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
-  File "renpy/exports.py", line 1060, in menu
-    rv = renpy.store.menu(new_items)
-  File "renpy/exports.py", line 1296, in display_menu
-    rv = renpy.ui.interact(mouse='menu', type=type, roll_forward=roll_forward)
+  File "game/scripts/script.rpy", line 6, in script
+    $ UIreturn = renpy.call_screen("Main_UI")
+  File "renpy/ast.py", line 928, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "renpy/python.py", line 2245, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/scripts/script.rpy", line 6, in <module>
+    $ UIreturn = renpy.call_screen("Main_UI")
+  File "renpy/exports.py", line 3136, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
   File "renpy/ui.py", line 298, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "renpy/display/core.py", line 3325, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "renpy/display/core.py", line 3737, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "renpy/display/core.py", line 568, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 568, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 568, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/screen.py", line 436, in visit_all
-    callback(self)
-  File "renpy/display/core.py", line 3737, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "renpy/display/screen.py", line 447, in per_interact
-    self.update()
-  File "renpy/display/screen.py", line 637, in update
-    self.screen.function(**self.scope)
-  File "game/scripts/screens/screens.rpy", line 206, in execute
-    screen choice(items):
-  File "game/scripts/screens/screens.rpy", line 206, in execute
-    screen choice(items):
-  File "game/scripts/screens/screens.rpy", line 207, in execute
-    use Main_UI
-  File "game/scripts/screens/mainUI.rpy", line 1, in execute
-    screen Main_UI():
-  File "game/scripts/screens/mainUI.rpy", line 1, in execute
-    screen Main_UI():
-  File "game/scripts/screens/mainUI.rpy", line 2, in execute
-    use BG_Image
-  File "game/scripts/screens/bg_image.rpy", line 1, in execute
-    screen BG_Image():
-  File "game/scripts/screens/bg_image.rpy", line 1, in execute
-    screen BG_Image():
-  File "game/scripts/screens/bg_image.rpy", line 3, in execute
-    for q in Locations:
-  File "game/scripts/screens/bg_image.rpy", line 4, in execute
-    if q.name == Location:
-  File "game/scripts/screens/bg_image.rpy", line 5, in execute
-    $ Background = q.BG_Image
-  File "game/scripts/screens/bg_image.rpy", line 5, in <module>
-    $ Background = q.BG_Image
-AttributeError: 'place' object has no attribute 'BG_Image'
+  File "renpy/display/core.py", line 3839, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "renpy/display/core.py", line 2565, in draw_screen
+    renpy.config.screen_height,
+  File "render.pyx", line 492, in renpy.display.render.render_screen
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "renpy/display/layout.py", line 826, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "renpy/display/layout.py", line 826, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "renpy/display/layout.py", line 826, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "renpy/display/screen.py", line 688, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "renpy/display/layout.py", line 826, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "renpy/display/layout.py", line 1264, in render
+    st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "renpy/display/layout.py", line 826, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "renpy/display/behavior.py", line 795, in render
+    rv = super(Button, self).render(width, height, st, at)
+  File "renpy/display/layout.py", line 1264, in render
+    st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "renpy/display/im.py", line 625, in render
+    return cache.get(self, render=True)
+  File "renpy/display/im.py", line 287, in get
+    surf = image.load()
+  File "renpy/display/im.py", line 706, in load
+    raise e
+IOError: Couldn't find file 'images/places/icons/none.png'.
 
 Windows-10-10.0.19041
 Ren'Py 7.4.11.2266
 projeto teste 2 1.0
-Mon Jun 27 23:09:03 2022
+Tue Jun 28 21:06:37 2022

@@ -25,8 +25,8 @@ init python:
             global Chapter
             global Sequence
             defOutput = "images/places/icons/none.png"
-            output = "images/places/icons" + self.cfName + ".png"
-            altOutput = "images/places/icons" + self.cfName + "_" + str(Chapter) + "_" + str(Sequence) + ".png"
+            output = "images/places/icons/" + self.cfName + ".png"
+            altOutput = "images/places/icons/" + self.cfName + "_" + str(Chapter) + "_" + str(Sequence) + ".png"
             if renpy.loadable(altOutput):
                 return altOutput
             if renpy.loadable(output):
@@ -35,11 +35,11 @@ init python:
 
     Locations = []
 
-    Locations.append(place("Parada de Onibus","onibus",False))
-    Locations.append(place("Posto de Gasolina","posto_gasolina",False))
-    Locations.append(place("Hotel Paraíso","hotel",False))
-    Locations.append(place("Minha Casa","casa",False))
-    Locations.append(place("Meu Jardim","jardim",False))
+    Locations.append(place("Parada de Onibus","onibus",True))
+    Locations.append(place("Posto de Gasolina","posto_gasolina",True))
+    Locations.append(place("Hotel Paraíso","hotel",True))
+    Locations.append(place("Minha Casa","casa",True))
+    Locations.append(place("Meu Jardim","jardim",True))
 
     def CodeFriendlyLocationName():
         global Location
