@@ -2,9 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/scripts/screens/navMap.rpy", line 12: expected a keyword argument or end of line.
-    xsize = 10
-          ^
+File "game/scripts/initialization/clicky.entity.rpy", line 22: can't assign to operator
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Tue Jun 28 21:25:29 2022
+Tue Jun 28 23:06:38 2022

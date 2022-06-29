@@ -1,5 +1,6 @@
 screen Main_UI():
     use BG_Image
+    use ClickyScreen
     frame:
         background None
         imagebutton:

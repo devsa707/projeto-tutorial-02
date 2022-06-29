@@ -20,7 +20,7 @@ init python:
             self.isActive = False
 
         @property
-        def Avatar(self):
+        def avatar(self):
             global Location
             Output = "images/avatars/" + self.cfName + "_" + CodeFriendlyLocationName() +".png"
 
