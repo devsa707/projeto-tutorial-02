@@ -11,4 +11,6 @@ screen Main_UI():
 
     if navMenu:
         use NavMap
+    if Notification:
+        add "ui/notif.png"
     use TipScreen
