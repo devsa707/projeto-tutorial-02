@@ -1,11 +1,14 @@
 screen TopBar():
     frame:
         background None
-        hbox:
-            imagebutton:
-                hover "ui/map/map_icon.png"
-                idle "ui/map/map_icon.png"
-                action ToggleVariable("navMenu")
-                hovered tt.Action("Abrir o Mapa")
-            textbutton "Próximo" action SetVariable("clickType","UI"), Return("next")
+        for q in UIElements:
+            if q.isActive:
+                imagebutton:
+                    xpos q.x
+                    ypos q.y
+                    hover q.filepath
+                    idle q.filepath
+                    action SetVariable("clickType","UI"), Return(q.func)
+                    hovered tt.Action(q.ttip)
+                
             

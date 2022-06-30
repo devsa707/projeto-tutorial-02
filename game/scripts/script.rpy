@@ -19,4 +19,6 @@
         if clickType == "UI":
             if UIreturn == "next":
                 $ Next()
+            if UIreturn == "Nav":
+                $ navMenu = not navMenu
     return
