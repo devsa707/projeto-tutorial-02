@@ -16,4 +16,7 @@
                 call expression LabelToCall
             else:
                 call expression LabelDefault 
+        if clickType == "UI":
+            if UIreturn == "next":
+                $ Next()
     return
