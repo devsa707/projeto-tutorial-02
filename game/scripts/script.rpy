@@ -4,6 +4,9 @@
         window hide
         $ Notification = False
         $ clickType = ""
+        $ EventCheck = "event_" + str(Chapter) + "_" + str(Sequence)
+        if renpy.has_label(EventCheck):
+            call expression EventCheck
         $ UIreturn = renpy.call_screen("Main_UI")
         if clickType == "Nav":
             $ Location = UIreturn

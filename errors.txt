@@ -2,10 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scripts/initialization/uielement.entity.rpy", line 5: expected an indented block
-        self.x = x
-            ^
-    
+File "game/scripts/script.rpy", line 9: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation.
+    call expression EventCheck
+    ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Wed Jun 29 21:55:09 2022
+Wed Jun 29 22:04:14 2022

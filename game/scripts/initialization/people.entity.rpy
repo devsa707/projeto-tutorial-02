@@ -40,6 +40,6 @@ init python:
     Characters = []
 
     Characters.append(people("Lili","Fedida", "lili",4, True))
-    Characters.append(people("Frank","Smith", "frank_smith",2, True))
-    Characters.append(people("Jenny","Williams", "jenny_williams",0, True))
-    Characters.append(people("Zoey","Moore","zoey_moore" ,1, True))
+    Characters.append(people("Frank","Smith", "frank_smith",2, False))
+    Characters.append(people("Jenny","Williams", "jenny_williams",0, False))
+    Characters.append(people("Zoey","Moore","zoey_moore" ,1, False))
