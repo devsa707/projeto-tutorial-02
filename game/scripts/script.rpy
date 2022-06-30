@@ -9,4 +9,11 @@
             $ Location = UIreturn
         if clickType == "Object":
             call expression UIreturn
+        if clickType == "Character":
+            $ LabelToCall = UIreturn + "_" + str(Chapter) + "_" + str(Sequence)
+            $ LabelDefault = UIreturn + "_default"
+            if renpy.has_label(LabelToCall):
+                call expression LabelToCall
+            else:
+                call expression LabelDefault 
     return

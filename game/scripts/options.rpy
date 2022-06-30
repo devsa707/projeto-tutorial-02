@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("projeto teste 2")
+define config.name = _("Nem sei o que to fazendo mano kkkkk")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set

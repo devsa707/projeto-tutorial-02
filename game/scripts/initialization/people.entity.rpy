@@ -22,11 +22,24 @@ init python:
         @property
         def avatar(self):
             global Location
-            Output = "images/avatars/" + self.cfName + "_" + CodeFriendlyLocationName() +".png"
+            global Sequence
+            global Chapter
+            outputA = "images/avatars/" + self.cfName + "_" + CodeFriendlyLocationName() +".png"
+            outputB = "images/avatars/" + self.cfName + "_" + CodeFriendlyLocationName() + "_" + str(Chapter) +"_" + str(Sequence) + ".png"
+            if renpy.loadable(outputB):
+                return outputB
+            return outputA
+
+        @property
+        def isLocal(self):
+            if self.location == CodeFriendlyLocationNumber():
+                return True
+            return False
+
 
     Characters = []
 
-    Characters.append(people("Davey","Jones", "davey_jones",0, True))
+    Characters.append(people("Lili","Fedida", "lili",4, True))
     Characters.append(people("Frank","Smith", "frank_smith",2, True))
     Characters.append(people("Jenny","Williams", "jenny_williams",0, True))
     Characters.append(people("Zoey","Moore","zoey_moore" ,1, True))

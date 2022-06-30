@@ -2,7 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/scripts/initialization/clicky.entity.rpy", line 22: can't assign to operator
+File "game/scripts/initialization/defaults_defines.rpy", line 9: expected '=' not found.
+    define lili fedida = Character("Lili", image="lili" ,color="#44f")
+                ^
 
 Ren'Py Version: Ren'Py 7.4.11.2266
-Tue Jun 28 23:06:38 2022
+Wed Jun 29 21:19:02 2022

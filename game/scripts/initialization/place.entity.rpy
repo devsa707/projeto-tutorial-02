@@ -52,7 +52,12 @@ init python:
     def CodeFriendlyLocationNumber():
         global Location
         global Locations
-        for q,i in enumerate(Locations):
+        for i,q in enumerate(Locations):
             if Location == q.name:
                 return i
         return -1
+
+    def Next():
+        global Chapter
+        global Sequence
+        Sequence += 1
